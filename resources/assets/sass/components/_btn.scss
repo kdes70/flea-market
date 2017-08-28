@@ -1,0 +1,19 @@
+.btn-add{
+  height: 45px;
+  color: $white;
+  background-color: $base;
+  border-color: $base;
+  padding: $spacing * 2 $spacing * 6;
+  font-size: $font-size-base * 1.2;
+  span{
+    margin-right: 5px;
+  }
+  &:hover,
+  &:focus:active,
+  &:active,
+  &:focus{
+    color: $white;
+    background-color: h($base);
+    border-color: $base;
+  }
+}

@@ -8488,34 +8488,58 @@ aside .social-nav a + a {
   margin-left: 24px;
 }
 
-header .search-form {
+.search-block {
+  display: block;
   background: #ffffff;
   padding: 16px;
   margin-bottom: 16px;
+  height: 100%;
 }
 
-header .search-form input#search_field {
+.search-block input#search_field {
   border: 2px solid #00AF64;
   height: 45px;
 }
 
-header .search-form input[type="checkbox"] {
+.search-block input[type="checkbox"] {
   border: 2px solid #00AF64;
 }
 
-header .search-form button#search_button {
+.search-block button#search_button {
   background: #00AF64;
   border-color: #00AF64;
   height: 45px;
 }
 
-header .search-form button#search_button:focus,
-header .search-form button#search_button:active {
+.search-block button#search_button:focus,
+.search-block button#search_button:active {
   outline: none;
 }
 
-header .search-form button#search_button span {
+.search-block button#search_button span {
   width: 16px;
   height: 16px;
+}
+
+.btn-add {
+  height: 45px;
+  color: #ffffff;
+  background-color: #00AF64;
+  border-color: #00AF64;
+  padding: 8px 24px;
+  font-size: 16.8px;
+}
+
+.btn-add span {
+  margin-right: 5px;
+}
+
+.btn-add:hover,
+.btn-add:focus:active,
+.btn-add:active,
+.btn-add:focus {
+  color: #ffffff;
+  background-color: #007c47;
+  border-color: #00AF64;
 }
 

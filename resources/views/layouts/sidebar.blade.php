@@ -6,9 +6,9 @@
 
     <nav>
         <ul>
-            <li class="nav-item"><a href="">menu 1</a></li>
-            <li class="nav-item"><a href="">menu 1</a></li>
-            <li class="nav-item"><a href="">menu 1</a></li>
+            @foreach($category as $item)
+            <li class="nav-item"><a href="/category/{{$item->slug}}">{{$item->name}}</a></li>
+            @endforeach
         </ul>
     </nav>
 

@@ -1,29 +1,29 @@
-header {
-  .search-form {
-    background: $white;
-    padding: $spacing * 4;
-    margin-bottom: $spacing * 4;
+.search-block {
+  display: block;
+  background: $white;
+  padding: $spacing * 4;
+  margin-bottom: $spacing * 4;
+  height:100%;
 
-    input#search_field {
-      border: 2px solid $base;
-      height: 45px;
+  input#search_field {
+    border: 2px solid $base;
+    height: 45px;
+  }
+  input[type="checkbox"] {
+    border: 2px solid $base;
+  }
+  button#search_button {
+    background: $base;
+    border-color: $base;
+    height: 45px;
+    &:focus,
+    &:active {
+      outline: none;
     }
-    input[type="checkbox"]{
-      border: 2px solid $base;
+    span {
+      width: $spacing * 4;
+      height: $spacing * 4;
     }
-    button#search_button {
-      background: $base;
-      border-color: $base;
-      height: 45px;
-      &:focus,
-      &:active {
-        outline: none;
-      }
-      span{
-        width: $spacing * 4;
-        height: $spacing * 4;
-      }
-    }
-
   }
 }
+
