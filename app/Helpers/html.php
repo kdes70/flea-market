@@ -10,7 +10,7 @@ function style_ts($path)
         $ts = '';
     }
 
-    return '<link media="all" type="text/css" rel="styleheet" href="'.$path. $ts.'">';
+    return '<link media="all" type="text/css" rel="stylesheet" href="'. $path. $ts.'">';
 }
 
 function script_ts($path)

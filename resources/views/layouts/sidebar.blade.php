@@ -6,11 +6,15 @@
 
     <nav>
         <ul>
-            <li><a href="">menu 1</a></li>
-            <li><a href="">menu 2</a></li>
-            <li><a href="">menu 3</a></li>
-            <li><a href="">menu 4</a></li>
-            <li><a href="">menu 5</a></li>
+            <li class="nav-item"><a href="">menu 1</a></li>
+            <li class="nav-item"><a href="">menu 1</a></li>
+            <li class="nav-item"><a href="">menu 1</a></li>
         </ul>
     </nav>
+
+    <div class="social-nav">
+        <a href="https://facebook.com/" target="_blank" >@include('svg.facebook')</a>
+        <a href="https://vk.com/" target="_blank" >@include('svg.vk')</a>
+        <a href="https://ok.com/" target="_blank" >@include('svg.ok')</a>
+    </div>
 </aside>

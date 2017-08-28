@@ -1,0 +1,60 @@
+aside {
+  header {
+    h1 a {
+      font-size: 1.625rem;
+      font-weight: 600;
+      color: $base;
+      display: block;
+      &:hover {
+        color: h($base);
+      }
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin: $spacing * 2.25;
+    }
+  }
+
+  nav {
+    margin-top: $spacing * 24;
+    ul {
+      padding: 0;
+    }
+    .nav-item {
+      color: $black-80;
+      font-family: $font-family-sans-serif;
+      display: block;
+      font-weight: 700;
+      &:hover {
+        color: $black-60;
+      }
+      & + .nav-item {
+        margin-top: $spacing * 2.25;
+        border-top: 1px solid $black-10;
+        padding-top: $spacing * 2.25;
+      }
+    }
+  }
+
+  .social-nav {
+    display: flex;
+    margin-top: $spacing * 24;
+    a {
+      display: block;
+      svg {
+        fill: $base;
+        width: $spacing * 6;
+        height: $spacing * 6;
+      }
+      &:hover svg {
+        fill: h($base);
+      }
+      & + a {
+        margin-left: $spacing * 6;
+      }
+
+    }
+  }
+
+}
