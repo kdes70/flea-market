@@ -1,0 +1,30 @@
+html, body {
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-base;
+  background: $body-bg;
+  color: $text-color;
+  height: 100%;
+  line-height: $line-height-base;
+}
+
+p {
+  margin: 0px;
+  line-height: $line-height-copy;
+}
+
+a {
+  color: $base;
+  text-decoration: none;
+  &:hover {
+    transition: all 0.5 ease;
+    color: h($base);
+  }
+}
+
+input, select, textarea {
+  outline: none !important;
+}
+
+textarea {
+  resize: none;
+}

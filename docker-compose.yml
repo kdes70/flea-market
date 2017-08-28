@@ -2,6 +2,7 @@ version: '2'
 services:
   # The Application
   app:
+    container_name: capp
     build:
       context: ./
       dockerfile: app.dockerfile
@@ -15,6 +16,7 @@ services:
 
   # The Web Server
   web:
+    container_name: cweb
     build:
       context: ./
       dockerfile: web.dockerfile

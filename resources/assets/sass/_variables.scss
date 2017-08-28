@@ -21,6 +21,7 @@ $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
 $font-family-sans-serif: "Raleway", sans-serif;
 $font-size-base: 14px;
 $line-height-base: 1.6;
+$line-height-copy: 1.65;
 $text-color: #636b6f;
 
 // Navbar
@@ -36,3 +37,7 @@ $input-color-placeholder: lighten($text-color, 30%);
 
 // Panels
 $panel-default-heading-bg: #fff;
+
+$box-shadow: 0 0 1px rgba(0,0,0,0.15);
+
+$spacing: 4px;

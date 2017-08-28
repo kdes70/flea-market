@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>@yield('title')</title>
 
@@ -15,14 +16,13 @@
     </head>
     <body id="@yield('body_id')">
         <div id="app">
+            @include('layouts.sidebar')
 
-            @include('layout.sidebar')
+            @include('layouts.header')
             <main>
                 @yield('content')
             </main>
-
         </div>
-
-       {!! script_ts('/js/app.js') !!}
+        {!! script_ts('/js/app.js') !!}
     </body>
 </html>
