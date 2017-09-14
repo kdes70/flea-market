@@ -24,7 +24,7 @@
     </div>
     <div class="col-md-2">
         <div class="text-center">
-            <a href="" class="btn btn-md btn-block btn-add">
+            <a href="{{url('/add')}}" class="btn btn-md btn-block btn-add">
                 <span class="glyphicon glyphicon-plus"></span>Создать
             </a>
         </div>

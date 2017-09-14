@@ -25,3 +25,19 @@ main {
   flex-grow: 1;
   flex-shrink: 0;
 }
+
+.main {
+  background: #fff;
+  padding: 40px;
+}
+
+.error{
+  color: $error;
+  font-weight: 600;
+  font-size: .9em;
+  border: 1px solid;
+  padding: 3px;
+  display: inline-block;
+  margin-top: -1px;
+  border-radius: 4px;
+}

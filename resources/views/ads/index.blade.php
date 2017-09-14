@@ -12,34 +12,43 @@
 
     <div class="container">
 
-
-        @if($ads)
-            @foreach($ads as $ad)
-                <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 ads_wrapper">
-                <div class="ads_card">
-                    <div class="panel panel-default">
-                        <div class="panel-body">
-                            <div>
-                                <div class="ads_preview">
-                                    <a href="">
-                                        <img src="http://via.placeholder.com/180x180" alt="">
-                                    </a>
+        <div class="post_block">
+            @if($ads)
+                @foreach($ads as $ad)
+                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3 post_wrapper">
+                        <div class="post_card">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div>
+                                        <div class="post_preview">
+                                            <a class="img_wrapper"
+                                               title="{{$ad->title}}"
+                                               href=""
+                                               style="background: url('http://via.placeholder.com/180x180') center center / cover; height: 214px;">
+                                            </a>
+                                        </div>
+                                        <div class="post_title">
+                                            <a href="">{{$ad->title}}</a>
+                                        </div>
+                                        <div class="post_price text-left text-success">{{$ad->price}} &#8381;</div>
+                                    </div>
                                 </div>
-                                <div class="title">
-                                    <a href="">{{$ad->title}}</a>
+                                <div class="panel-footer">
+                                    <span class="glyphicon glyphicon-eye-open">56+7</span>
                                 </div>
-                                <div class="price">{{$ad->price}} &#8381;</div>
                             </div>
                         </div>
-                        <div class="panel-footer">
-                            <span class="glyphicon glyphicon-eye-open">56+7</span>
-                        </div>
                     </div>
-                </div>
-            </div>
-            @endforeach
+                @endforeach
             @else
-        @endif
+                {{--// not post--}}
+            @endif
+
+            {{$ads->links()}}
+        </div>
+
+
+
 
     </div>
 

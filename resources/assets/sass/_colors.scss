@@ -1,5 +1,6 @@
 $base: #00AF64;
 $base-dark: #218359;
+$base-border: #18905d;
 
 $white: #ffffff;
 $white-10: rgba($white, 0.1);
@@ -21,3 +22,6 @@ $black-80: rgba($black, 0.8);
 @function h($color){
   @return darken($color, 10%);
 }
+
+
+$error: #f54949;

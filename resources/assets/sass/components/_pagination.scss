@@ -1,0 +1,35 @@
+.pagination {
+  > .active {
+    > a,
+    &:hover,
+    &:focus {
+      background-color: $base;
+      border-color: $base-border;
+    }
+    > span,
+    &:hover,
+    &:focus {
+      background-color: $base;
+      border-color: $base-border;
+    }
+  }
+
+  > li {
+    & > a,
+    & > span {
+      position: relative;
+      float: left;
+      padding: 6px 12px;
+      line-height: 1.6;
+      font-size: 1.2em;
+      font-weight: 600;
+      text-decoration: none;
+      color: $base;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      margin-left: -1px;
+    }
+
+  }
+}
+
