@@ -1,0 +1,25 @@
+img.img-thumb {
+  margin: auto;
+  margin-bottom: 10px;
+  max-width: 100%;
+  width: 200px;
+  height: 100%;
+}
+
+.ads-fileinput,
+.img-thumb {
+  display: block;
+  height: 160px;
+  max-width: 200px;
+  border: 3px solid #51b98d;
+  background: center center no-repeat;
+  background-size: contain;
+}
+
+.ads-fileinput{
+  border: 3px solid #51b98d;
+  text-align: center;
+  vertical-align: middle;
+  padding: 20px;
+  color: rgb(92, 179, 142);
+}

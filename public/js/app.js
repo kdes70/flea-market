@@ -778,8 +778,12 @@ module.exports = __webpack_require__(40);
 
 /***/ }),
 /* 9 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_FileInput_vue__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_FileInput_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_FileInput_vue__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -791,13 +795,15 @@ __webpack_require__(10);
 
 window.Vue = __webpack_require__(35);
 
+
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(36));
+Vue.component('file-input', __WEBPACK_IMPORTED_MODULE_0__components_FileInput_vue___default.a);
 
 var app = new Vue({
   el: '#app'
@@ -41800,9 +41806,9 @@ var Component = __webpack_require__(37)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "C:\\OSPanel\\domains\\flea-market.dev\\resources\\assets\\js\\components\\Example.vue"
+Component.options.__file = "C:\\OSPanel\\domains\\flea-market.dev\\resources\\assets\\js\\components\\FileInput.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] FileInput.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -41811,9 +41817,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-f4e499f8", Component.options)
+    hotAPI.createRecord("data-v-e0953270", Component.options)
   } else {
-    hotAPI.reload("data-v-f4e499f8", Component.options)
+    hotAPI.reload("data-v-e0953270", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -41942,10 +41948,77 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
+    props: ['filename', 'fileid', 'classname'],
+    data: function data() {
+        return {
+            image: ''
+        };
+    },
+
+    methods: {
+        onUploadInput: function onUploadInput(e) {
+            $(this.$el).find('.' + this.classname).click();
+        },
+        onFileChange: function onFileChange(e) {
+            var files = e.target.files || e.dataTransfer.files;
+            if (!files.length) return;
+            this.createImage(files[0]);
+        },
+        createImage: function createImage(file) {
+            var reader = new FileReader();
+            var vm = this;
+            reader.onload = function (e) {
+
+                var image = new Image();
+                vm.image = e.target.result;
+
+                image.onload = function (e) {
+                    var canvas = document.createElement("canvas");
+                    var size = 50; // Changing the image size on the percent
+
+                    image.width = image.width * size / 100;
+                    image.height = image.height * size / 100;
+                    // resize
+                    var ctx = canvas.getContext("2d");
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    canvas.width = image.width;
+                    canvas.height = image.height;
+                    ctx.drawImage(image, 0, 0, image.width, image.height);
+
+                    var dataurl = canvas.toDataURL("image/png");
+                    document.getElementById('img').src = dataurl;
+
+                    //  $('#img').append(image);
+
+                    // AUTO DOWNLOAD THE IMAGES, ONCES RESIZED.
+                    var a = document.createElement('a');
+                    a.href = canvas.toDataURL("image/png");
+                    a.download = 'sample.jpg';
+                    document.body.appendChild(a);
+                    a.click();
+                };
+            };
+            reader.readAsDataURL(file);
+        },
+
+        // TODO после удаления повторно не грузит привью
+        removeImage: function removeImage(e) {
+            return this.image = '';
+        }
     }
 });
 
@@ -41954,27 +42027,55 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    staticClass: "container"
+  return _c('div', [(!_vm.image) ? _c('div', {
+    staticClass: "ads-fileinput"
   }, [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-8 col-md-offset-2"
-  }, [_c('div', {
-    staticClass: "panel panel-default"
-  }, [_c('div', {
-    staticClass: "panel-heading"
-  }, [_vm._v("Example Component")]), _vm._v(" "), _c('div', {
-    staticClass: "panel-body"
-  }, [_vm._v("\n                    I'm an example component!\n                ")])])])])])
-}]}
+    staticClass: "file-button",
+    attrs: {
+      "id": "divUpload"
+    },
+    on: {
+      "click": _vm.onUploadInput
+    }
+  }, [_c('span', {
+    staticClass: "glyphicon glyphicon-plus"
+  })])]) : _c('div', [_c('div', {
+    staticClass: "img-thumb",
+    style: ({
+      backgroundImage: ("url(" + _vm.image + ")")
+    })
+  }), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "img"
+    }
+  }), _vm._v(" "), _c('button', {
+    staticClass: "ui negative icon basic button",
+    on: {
+      "click": _vm.removeImage
+    }
+  }, [_c('i', {
+    staticClass: "remove negative large icon"
+  })])]), _vm._v(" "), _c('input', {
+    class: _vm.classname,
+    staticStyle: {
+      "display": "none"
+    },
+    attrs: {
+      "name": _vm.filename,
+      "id": _vm.fileid,
+      "type": "file",
+      "accept": "image/*"
+    },
+    on: {
+      "change": _vm.onFileChange
+    }
+  })])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-f4e499f8", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-e0953270", module.exports)
   }
 }
 

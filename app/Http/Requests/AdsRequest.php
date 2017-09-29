@@ -11,7 +11,7 @@ class AdsRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
@@ -21,7 +21,7 @@ class AdsRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             'city_id'     => 'required',
@@ -32,6 +32,7 @@ class AdsRequest extends FormRequest
             'phone'       => 'required|numeric',
             'price'       => 'required|numeric',
             'terms'       => 'required',
+            'files' => 'required',// |mimes:jpeg,png,jpg|max:2048
         ];
     }
 }

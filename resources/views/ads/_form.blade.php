@@ -78,22 +78,27 @@
 
         {{--photo--}}
         <h4 class="ui dividing header">Фото</h4>
-        <div class="form-group">
-            <div class="three wide field">
+        <div class="row">
+            <div class="col-md-2">
                 <file-input filename="files[]" fileid="files-1" classname="hidde-new-file"></file-input>
             </div>
-            <div class="three wide field">
+            <div class="col-md-2">
                 <file-input filename="files[]" fileid="files-2" classname="hidde-new-file"></file-input>
             </div>
-            <div class="three wide field">
+            <div class="col-md-2">
                 <file-input filename="files[]" fileid="files-3" classname="hidde-new-file"></file-input>
             </div>
-            <div class="three wide field">
+            <div class="col-md-2">
                 <file-input filename="files[]" fileid="files-4" classname="hidde-new-file"></file-input>
             </div>
-            <div class="three wide field">
+            <div class="col-md-2">
                 <file-input filename="files[]" fileid="files-5" classname="hidde-new-file"></file-input>
             </div>
+        </div>
+        <div class="row">
+            @if ($errors->has('files'))
+                <span class="error">{{ $errors->first('files') }}</span>
+            @endIf
         </div>
         {{--photo--}}
 
