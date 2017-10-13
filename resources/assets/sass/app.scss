@@ -9,11 +9,14 @@
 // Variables
 @import "variables";
 
+// Base
+
+@import "base";
+
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Layouts
-@import "layouts/html";
 @import "layouts/layout";
 @import "layouts/sidebar";
 

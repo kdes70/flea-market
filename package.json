@@ -17,5 +17,15 @@
     "laravel-mix": "^1.0",
     "lodash": "^4.17.4",
     "vue": "^2.1.10"
+  },
+  "name": "flea-market.dev",
+  "version": "1.0.0",
+  "description": "my flea market project",
+  "main": "app.js",
+  "repository": "https://github.com/kdes70/flea-market.git",
+  "author": "kdes70 <dmitry@berloga.us>",
+  "license": "MIT",
+  "dependencies": {
+    "vuex": "^3.0.0"
   }
 }

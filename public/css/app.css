@@ -5688,7 +5688,7 @@ tbody.collapse.in {
 }
 
 .navbar-default {
-  background-color: #fff;
+  background-color: #ffffff;
   border-color: #d3e0e9;
 }
 
@@ -8348,6 +8348,12 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-font-smoothing: antialiased !important;
 }
 
 html,

@@ -1,4 +1,15 @@
-html, body {
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+body {
   font-family: $font-family-sans-serif;
   font-size: $font-size-base;
   background: $body-bg;
@@ -7,9 +18,16 @@ html, body {
   line-height: $line-height-base;
 }
 
-p {
-  margin: 0px;
-  line-height: $line-height-copy;
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  font-family: $headingFont
+}
+
+a, input:focus, textarea:focus, button {
+  outline: none !important
+}
+
+a {
+  cursor: pointer
 }
 
 a {
@@ -19,6 +37,15 @@ a {
     transition: all 0.5s ease;
     color: h($base);
   }
+}
+
+p {
+  margin: 0;
+  line-height: $line-height-copy;
+}
+
+img {
+  width: 100%;
 }
 
 input, select, textarea {
