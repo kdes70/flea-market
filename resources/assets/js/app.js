@@ -1,25 +1,43 @@
-require('./bootstrap');
+require('./bootstrap')
 
-window.Vue = require('vue');
+window.Vue = require('vue')
 
-import router from './router';
-
-Vue.config.debug = true;
-Vue.config.devTools = true;
-
-
+import NProgress from 'vue-nprogress'
+import {sync} from 'vuex-router-sync'
 // import components
-import App from './components/App.vue';
+import App from './components/App.vue'
+
+import router from './router'
+import store from './vuex/index'
 
 
-import FileInput from './components/FileInput.vue';
+Vue.use(NProgress)
+
+sync(store, router)
+
+const nprogress = new NProgress({parent: '.nprogress-container'})
 
 
-Vue.component('file-input', FileInput);
+const {state} = store
+const {config} = state.ui
+
+router.beforeEach((route, redirect, next) => {
+    if (config.mobile && config.sidebar) {
+        config.sidebar = false
+    }
+    next()
+})
+
+Vue.config.debug = true
+Vue.config.devTools = true
+Vue.config.productionTip = false
+
 
 const app = new Vue({
     el: '#app',
-   // router,
+    router,
+    store,
+    nprogress,
     template: '<App/>',
-    components: { App }
+    components: {App}
 });

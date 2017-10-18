@@ -1,15 +1,20 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from 'vue'
+import Vuex from 'vuex'
 
-//import post from './store/post.js';
-import ui from './store/ui.js';
+Vue.use(Vuex);
 
-Vue.use(Vuex)
+import createLogger from '../plugins/logger'
+
+import ui from './modules/ui/ui'
+import category from './modules/category/category'
+import ads from './modules/ads/ads'
 
 export default new Vuex.Store({
     modules: {
-        post,
         ui,
+        category,
+        ads,
     },
-    strict: true
+    strict: true,
+    plugins: [createLogger()]
 });

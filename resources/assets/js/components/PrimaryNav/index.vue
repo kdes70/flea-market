@@ -3,47 +3,39 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-3 PrimaryNav-button_nav_container text-center">
-                    <button v-if="!onPostItem" class="btn PrimaryNav-button_nav PrimaryNav-button" @click="toggleSidebar">
-                        <i class="{{ sidebarOpen ? 'ion-close' : 'ion-navicon' }}"></i>
+                    <button class="btn PrimaryNav-button_nav PrimaryNav-button"
+                            @click="$store.dispatch('TOGGLE_SIDEBAR')">
+                        <i :class=" sidebar ? 'glyphicon glyphicon-remove' : 'glyphicon glyphicon-menu-hamburger'"></i>
                     </button>
-                    <button v-if="onPostItem" class="btn PrimaryNav-button_nav PrimaryNav-button" @click="backToHome">
-                        <i class="ion-arrow-left-c"></i>
-                    </button>
+                    <!--<button v-if="onPostItem" class="btn PrimaryNav-button_nav PrimaryNav-button" @click="backToHome">-->
+                    <!--<i class="glyphicon glyphicon-menu-left"></i>-->
+                    <!--</button>-->
                 </div>
                 <div class="col-xs-6 PrimaryNav-logo_container text-center">
-                    <h1 class="PrimaryNav-logo"><a v-link="{ path: '/' }">Simple PWA</a></h1>
+                    <h1 class="PrimaryNav-logo">
+                        <router-link to="/">{{ appName }}</router-link>
+                    </h1>
                 </div>
                 <div class="col-xs-3 PrimaryNav-button_search_container text-center">
-                    <button v-if="!onPostItem" class="btn PrimaryNav-button_search PrimaryNav-button" @click="toggleSearchbar">
-                        <i class="{{ searchbarOpen ? 'ion-close' : 'ion-ios-search-strong' }}"></i>
-                    </button>
+                    <!--<button v-if="!onPostItem" class="btn PrimaryNav-button_search PrimaryNav-button" @click="toggleSearchbar">-->
+                    <!--<i :class="searchbarOpen ? 'glyphicon glyphicon-remove' : 'glyphicon glyphicon-search'"></i>-->
+                    <!--</button>-->
                 </div>
             </div>
         </div>
     </div>
 </template>
 <script>
-   // import UIActions from '../../vuex/actions/ui.js';
+
     export default {
-//        vuex: {
-//            getters: {
-//                onPostItem: ({ ui }) => ui.onPostItem,
-//                searchbarOpen: ({ ui }) => ui.searchbarOpen,
-//                sidebarOpen: ({ ui }) => ui.sidebarOpen
-//            },
-//            actions: { UIActions }
-//        },
-//        methods: {
-//            toggleSearchbar() {
-//                this.UIActions('TOGGLE_SEARCHBAR')
-//            },
-//            toggleSidebar() {
-//                this.UIActions('TOGGLE_SIDEBAR')
-//            },
-//            backToHome() {
-//                window.history.back()
-//                this.UIActions('ON_NETRAL_PAGE')
-//            },
-//        }
-    };
+        computed: {
+            sidebar() {
+                return this.$store.state.ui.config.sidebar
+            },
+            appName() {
+                return this.$store.state.ui.config.appName
+            }
+        },
+    }
+
 </script>

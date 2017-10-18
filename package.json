@@ -26,6 +26,10 @@
   "author": "kdes70 <dmitry@berloga.us>",
   "license": "MIT",
   "dependencies": {
-    "vuex": "^3.0.0"
+    "ionicons": "^3.0.0",
+    "vue-nprogress": "^0.1.5",
+    "vue-router": "^3.0.0",
+    "vuex": "^3.0.0",
+    "vuex-router-sync": "2"
   }
 }
