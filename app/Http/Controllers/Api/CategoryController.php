@@ -10,6 +10,6 @@ class CategoryController extends ApiController
     //index
     public function index()
     {
-        return Category::all();
+        return Category::orderBy('name')->get();
     }
 }

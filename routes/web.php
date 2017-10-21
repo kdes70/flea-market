@@ -12,8 +12,12 @@
 */
 
 Route::get('/', 'AdsController@index');
-
-// ADS
-Route::get('/add', 'AdsController@create');
-Route::post('/add', 'AdsController@store');
-Route::get('/parser', 'ParserController@index');
+//
+//// ADS
+//Route::get('/add', 'AdsController@create');
+//Route::post('/add', 'AdsController@store');
+//Route::get('/parser', 'ParserController@index');
+//
+Auth::routes();
+//
+//Route::get('/home', 'HomeController@index')->name('home');

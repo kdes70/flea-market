@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import HomeView from '../pages/HomeView'
+import HomeView from './../pages/HomeView'
+import RegistrationView from './../pages/RegistrationView'
+import LoginView from './../pages/LoginView'
 
 // import DetailView from '../components/DetailView'
 // import PostView from '../components/PostView'
@@ -13,13 +15,23 @@ Vue.use(Router)
 export default new Router({
    // mode: 'history',
    // linkActiveClass: 'is-active',
-   // scrollBehavior: () => ({y: 0}),
+     scrollBehavior: () => ({y: 0}),
     routes: [
         {
             name: 'Home',
             path: '/',
             component: HomeView
         },
+        {
+            name: 'Registration',
+            path: '/registration',
+            component: RegistrationView
+        },
+        {
+            name: 'Login',
+            path: '/login',
+            component: LoginView
+        }
         //...generateRoutesFromMenu(menu),
         // {
         //     path: '*',

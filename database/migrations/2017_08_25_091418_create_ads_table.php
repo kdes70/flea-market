@@ -39,9 +39,6 @@ class CreateAdsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ads', function(Blueprint $table){
-            $table->dropForeign('ads_category_id_foreign');
-//            $table->dropColumn('category_id');
-        });
+        Schema::dropIfExists('ads');
     }
 }

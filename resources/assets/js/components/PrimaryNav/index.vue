@@ -17,6 +17,18 @@
                     </h1>
                 </div>
                 <div class="col-xs-3 PrimaryNav-button_search_container text-center">
+
+                    <router-link :to="{ name: 'Login'}"
+                                 class="btn PrimaryNav-button_nav PrimaryNav-button">
+                        <i class="glyphicon glyphicon-log-in"></i>
+                    </router-link>
+
+                    <router-link :to="{ name: 'Registration'}"
+                                 class="btn PrimaryNav-button_nav PrimaryNav-button">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </router-link>
+
+
                     <!--<button v-if="!onPostItem" class="btn PrimaryNav-button_search PrimaryNav-button" @click="toggleSearchbar">-->
                     <!--<i :class="searchbarOpen ? 'glyphicon glyphicon-remove' : 'glyphicon glyphicon-search'"></i>-->
                     <!--</button>-->

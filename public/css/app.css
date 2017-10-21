@@ -8458,6 +8458,24 @@ button.close {
   }
 }
 
+.main-wrapper {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+}
+
+.error {
+  color: #f54949;
+  font-weight: 600;
+  font-size: .9em;
+  border: 1px solid;
+  padding: 3px;
+  display: inline-block;
+  margin-top: -1px;
+  border-radius: 4px;
+}
+
 .PrimaryNav {
   background: #ffffff;
   position: fixed;
@@ -8549,6 +8567,20 @@ button.close {
 
 .Sidebar-overlay--open {
   display: block;
+}
+
+.page-registration,
+.page-login {
+  background: #ffffff;
+  padding: 40px;
+  position: absolute;
+  top: 60px;
+  left: 0;
+}
+
+.page-registration h1,
+.page-login h1 {
+  font-size: 2em;
 }
 
 .nprogress-container {

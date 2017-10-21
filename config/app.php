@@ -169,6 +169,8 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
+        Barryvdh\Cors\ServiceProvider::class,
+        laravel\Passport\PassportServiceProvider::class,
 
         /*
          * Application Service Providers...

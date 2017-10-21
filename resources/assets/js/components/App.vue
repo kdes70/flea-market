@@ -32,23 +32,24 @@
 
         components: {PrimaryNav, Sidebar, NprogressContainer/*Searchbar, , MyFooter*/},
 
-        beforeMount() {
-            const config = this.config
-            const { body } = document
-            const WIDTH = 768
-            const RATIO = 3
-            const handler = () => {
-                if (!document.hidden) {
-                    let rect = body.getBoundingClientRect()
-                    config.mobile = rect.width - RATIO < WIDTH
-                    config.sidebar = !config.mobile
-                    config.overlay = config.mobile
-                }
-            }
-            document.addEventListener('visibilitychange', handler)
-            window.addEventListener('DOMContentLoaded', handler)
-            window.addEventListener('resize', handler)
-        },
+//        beforeMount() {
+//            const config = this.config
+//            const { body } = document
+//            const WIDTH = 768
+//            const RATIO = 3
+//            const handler = () => {
+//                if (!document.hidden) {
+//                    let rect = body.getBoundingClientRect()
+//                    config.mobile = rect.width - RATIO < WIDTH
+//                    config.sidebar = !config.mobile
+//                    config.overlay = config.mobile
+//                }
+//            }
+//            console.log(config.sidebar )
+//            document.addEventListener('visibilitychange', handler)
+//            window.addEventListener('DOMContentLoaded', handler)
+//            window.addEventListener('resize', handler)
+//        },
 
         computed: {
             config () {

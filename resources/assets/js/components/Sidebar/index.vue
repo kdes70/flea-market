@@ -1,9 +1,9 @@
 <template>
     <div class="Sidebar-container">
-        <aside :class="['Sidebar u-shadow ', show ? 'Sidebar--open' : '' ]">
+        <aside :class="['Sidebar u-shadow ', show === true ? 'Sidebar--open' : '' ]">
             <h4 class="Sidebar-title">Categories</h4>
             <ul class="list-unstyled Sidebar-menu">
-               // <li><a href="#" @click.prevent="filterPost('')">All</a></li>
+                <!--<li><a href="#" @click.prevent="filterPost('')">All</a></li>-->
                 <li v-for="category in categoryList">
                      <a href="#">{{ category.name }}</a>
                 </li>
@@ -20,6 +20,7 @@
             show: Boolean
         },
         mounted() {
+            console.log(this.show);
             this.getCategoryList()
         },
         methods: {

@@ -5,7 +5,7 @@ const state = {
 }
 
 const mutations = {
-    SIDEBAR(state, status = true) {
+    SIDEBAR(state, status = false) {
         state.config.sidebar = status
     }
 }
