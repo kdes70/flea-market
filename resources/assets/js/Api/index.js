@@ -7,6 +7,10 @@ class API {
     static login() {
         return '/api/v1/login'
     }
+
+    static logout() {
+        return '/api/v1/logout'
+    }
 }
 
 export default API

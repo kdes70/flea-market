@@ -22,15 +22,13 @@
     import PrimaryNav from './PrimaryNav/index.vue';
     import Sidebar from './Sidebar/index.vue';
 
-    //    import Searchbar from './Searchbar/index.vue';
-
-    //    import MyFooter from './MyFooter/index.vue';
+    import {mapState} from 'vuex'
 
 
     export default {
         name: 'app',
 
-        components: {PrimaryNav, Sidebar, NprogressContainer/*Searchbar, , MyFooter*/},
+        components: {PrimaryNav, Sidebar, NprogressContainer},
 
 //        beforeMount() {
 //            const config = this.config
@@ -50,12 +48,25 @@
 //            window.addEventListener('DOMContentLoaded', handler)
 //            window.addEventListener('resize', handler)
 //        },
+//        data() {
+//            return {
+//                loading: false
+//            }
+//        },
 
         computed: {
-            config () {
+            ...mapState({
+                auth: state => state.auth
+            }),
+            config() {
                 return this.$store.state.ui.config
             }
-        }
+        },
+        created() {
+            const userObj = this.$store.state.auth.authUser
+            this.$store.dispatch('setAuthUser', userObj)
+        },
+
 
     }
 </script>

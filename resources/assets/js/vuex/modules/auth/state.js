@@ -5,8 +5,5 @@ export default {
         refresh_token: null,
         token_type: null,
     },
-    curentUser: {
-        username: null,
-        password: null,
-    }
+    authUser: null,
 }

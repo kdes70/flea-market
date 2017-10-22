@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import HomeView from './../pages/HomeView'
 import RegistrationView from './../pages/RegistrationView'
 import LoginView from './../pages/LoginView'
+import AddAds from './../pages/AddAdsView'
 
 // import DetailView from '../components/DetailView'
 // import PostView from '../components/PostView'
@@ -13,9 +14,9 @@ import LoginView from './../pages/LoginView'
 Vue.use(Router)
 
 export default new Router({
-   // mode: 'history',
-   // linkActiveClass: 'is-active',
-     scrollBehavior: () => ({y: 0}),
+    // mode: 'history',
+    // linkActiveClass: 'is-active',
+    scrollBehavior: () => ({y: 0}),
     routes: [
         {
             name: 'Home',
@@ -30,7 +31,23 @@ export default new Router({
         {
             name: 'Login',
             path: '/login',
-            component: LoginView
+            component: LoginView,
+            // beforeEnter: (to, from, next) => {
+            //
+            //     if (to.name === 'Login' && state.auth.authUser !== null) {
+            //         next({path: '/', query: {redirect: to.fullPath}});
+            //     }
+            //
+            //     next();
+            // }
+        },
+        {
+            name: 'Add Ads',
+            path: '/add',
+            component: AddAds,
+            meta: {
+                requiresAuth: true
+            }
         }
         //...generateRoutesFromMenu(menu),
         // {

@@ -4,6 +4,8 @@ import createPersistedState from 'vuex-persistedstate'
 
 Vue.use(Vuex);
 
+const debug = process.env.NODE_ENV !== 'production';
+
 import createLogger from '../plugins/logger'
 
 import ui from './modules/ui/ui'
@@ -18,6 +20,7 @@ export default new Vuex.Store({
         ads,
         auth,
     },
-    strict: true,
-    plugins: [createPersistedState(), createLogger()]
+    strict: debug,
+    plugins: [createPersistedState()],
+    middlewares: debug ? [createLogger()] : []
 });

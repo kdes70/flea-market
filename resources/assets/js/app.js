@@ -26,11 +26,29 @@ router.beforeEach((route, redirect, next) => {
     if (config.mobile && config.sidebar) {
         config.sidebar = false
     }
-    console.log(config.sidebar);
     next()
 
 })
 
+
+router.beforeEach((to, from, next) => {
+
+    if (to.matched.some(record => record.meta.requiresAuth) && state.auth.authUser == null) {
+
+        alert('Нужно авторизоваться!')
+
+        next({path: '/login', query: {redirect: to.fullPath}});
+    } else {
+
+        if (to.name === 'Login' && state.auth.authUser !== null) {
+            next({path: '/', query: {redirect: to.fullPath}});
+        }
+
+        next();
+    }
+
+
+})
 
 Vue.config.debug = true
 Vue.config.devTools = true

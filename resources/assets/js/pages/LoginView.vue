@@ -38,7 +38,11 @@
                             </div>
                         </div>
 
+
                         <div class="text-center">
+
+                            <!--<bounce-loader :loading="loading"></bounce-loader>-->
+
                             <button class="btn btn-primary btn-lg btn-block login-button">Login</button>
                         </div>
                     </form>
@@ -49,30 +53,50 @@
 </template>
 
 <script>
+
+    import {mapState} from 'vuex'
+
+    //import BounceLoader from './../components/Spinner/BounceLoader.vue'
+
     export default {
+//        componets: {
+//            BounceLoader
+//        },
+        computed: {
+            ...mapState({
+                auth: state => state.authUser
+            })
+        },
+
         data() {
             return {
                 user: {
-                    email: null,
-                    password: null,
+                    email: 'kdes70@mail.ru',
+                    password: '111111',
                 },
                 errors: {
                     email: [],
                     password: [],
-                }
+                },
+                // loading: true
+
             }
         },
         methods: {
             login(user) {
+                //this.loading = true
                 this.$store.dispatch('login', user)
                     .then(response => {
-                        console.log('response success form', response);
+                        console.log('login success form', response);
+                        this.$store.dispatch('getAuthUser', response.data)
+                        this.$router.push({name: 'Home'})
                     })
                     .catch(error => {
-                        alert(error.response.data.message)
-                        console.log('response failed form', error.response);
+                        // alert(error.response.data.message)
+                        console.log('response failed form', error);
                     })
             }
-        }
+        },
+
     }
 </script>
